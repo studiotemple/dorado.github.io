@@ -54,15 +54,14 @@
                 return Math.floor(RandVal);
             }
 
-            function mixing(){
-
+            function mixing(mix){
+				console.log(mix);
                 isBreak = false;
 
                 for(var i=input.val().length; i >= 0; i--){
-
-                        mix = input.val().charAt(i);
-
-                        switch(mix){
+						
+						var mixmix = mix.charAt(i);
+                        switch(mixmix){
 
                             case "하" :
                                 isRandom = makeRandom(1,3);
@@ -364,12 +363,14 @@
                                 isBreak = true;
                                 break; 
                             case "오" :
-                                isRandom = makeRandom(1, 3);
+                                isRandom = makeRandom(1, 5);
                                 if(isRandom==1){
                                     result = input.val().slice(0, i+1) + "....우, 제대로 놀아보자!"; 
                                 } else if(isRandom==2){
                                     result = input.val().slice(0, i+1) + "....늘 당직은 메르시입니다.";
-                                }
+                                } else if (isRandom==3 || isRandom==4) {
+									result = input.val().slice(0, i+1) + "....오카미요, 와가 테키오 쿠라에!";
+								}
 
                                 output.text(result);
                                 isBreak = true;
@@ -463,14 +464,16 @@
             };
 
             btn.on('click', function(){
+				output.text("이곳에 번역된 내용이 표시됩니다.");
                 if (input.val() == false) {
                     alert("내용을 입력해 주세요.");
                 } else {
-                    mixing();  
+					mix = input.val();
+                    mixing(mix);
                     if(output.text() == "이곳에 번역된 내용이 표시됩니다."){
                         alert("번역할 내용이 마땅치 않네요... 다른 내용을 입력해 보세요.");
                     }
-                }
+                } 
             });
 
             clip.on('click', function(){
@@ -479,7 +482,6 @@
                 } else if(output.text() == "이곳에 번역된 내용이 표시됩니다."){
                     alert("번역할 내용이 마땅치 않네요... 다른 내용을 입력해 보세요.");
                 } else {
-                    input.val();
                     copyToClipboard(output.text());    
                 }
 
