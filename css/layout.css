@@ -2,66 +2,39 @@
 
 html, div{-webkit-overflow-scrolling : touch;}
 
+button:focus {
+	outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+
 .wrap {
 	width: 100%;
 }
 
 .container {
 	width: 100%;
-	height: 100%;
 }
 
-.area-transper {
+.main-visual {
 	width: 100%;
-	max-width: 980px;
-	overflow: hidden;
-	margin: 0 auto;
-	padding: 0 10px;
-	text-align: center;
-	-webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+	background-position: center center;
+	background-size: cover;
+	background-image:  url('../images/mercy-theatrical-standard.jpg');
 }
 
-.input {
-	width: 100%;
-	margin-top: 20px;
-	padding: 10px;
-	height: 100px;
-	resize: none;
-	border: 1px solid #3d3d3d;
-	-webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+.dim {
+	background-color: rgba(0,0,0,0.7);
 }
 
-.btn {
-	width: 60%;
-	height: 50px;
-	margin-top: 20px;
-	cursor: pointer;
-	text-align: center;
-	background-color: #19c000;
-	color: #ffffff;
-}
-
-.btn-clip {
-	width: 40%;
-	height: 50px;
-	margin-top: 20px;
-	cursor: pointer;
-	text-align: center;
-	background-color: #2285b1;
-	color: #ffffff;
-}
-
-.area-result {
+.guide-container {
 	width: 100%;
 	max-width: 980px;
 	margin: 0 auto;
-	height: 100px;
-	margin-top: 30px;
-	padding: 0 10px;
+	padding: 30px;
 	text-align: center;
 	-webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -69,25 +42,99 @@ html, div{-webkit-overflow-scrolling : touch;}
 }
 
 .title {
-	text-align: center;
-	margin-top: 50px;
-	font-size: 3.0em;
-}
-
-.result {
-	padding: 50px;
+	font-size: 4.0em;
+	margin-top: 70px;
+	margin-bottom: 20px;
+	word-break: break-all;
+	color: #ffffff;
 }
 
 .guide {
-	margin: 30px 0;
-}
-
-.guide p {
-	line-height: 24px;
+	color: #f3f3f3;
+	line-height: 1.4;
+	font-size: 0.9em;	
 }
 
 .sub {
 	margin-top: 20px;
-	font-size: 0.9em;
-	color: #6d6d6d;
+	font-size: 0.85em;
+	color: #BDBDBD;
 }
+
+.area-transper, .area-result {
+	width: 100%;
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 0 20px;
+	overflow: hidden;
+	text-align: center;
+	webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.input {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-indent: 15px;
+	font-size: 14px;
+	border: 1px solid #373737;
+	border-radius: 30px;
+	resize: none;
+	overflow: hidden;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	outline: none;
+	webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.btn {
+	min-width: 50%;
+	height: 50px;
+	font-size: 0.9em;
+	padding:0 10px;	
+	border-radius: 30px;
+	color: #ffffff;
+	background-color: #0AA988;
+	margin-bottom: 100px;
+	cursor: pointer;
+}
+
+.area-result {
+	padding: 50px;
+}
+
+.list {
+	margin-bottom: 30px;
+	font-size: 2.0em;
+}
+
+.result {
+	width: 100%;
+	padding: 50px;
+	line-height: 24px;
+	color: #2D2D2D;
+	border: 1px solid #E1E1E1;
+	margin-bottom: 10px;
+	webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.btn-clip {
+	min-width: 50%;
+	height: 50px;
+	font-size: 0.9em;
+	padding:0 10px;	
+	border-radius: 30px;
+	color: #ffffff;
+	background-color: #FFB300;
+	margin-bottom: 100px;
+	cursor: pointer;
+	margin-bottom: 30px;
+}
+
+
