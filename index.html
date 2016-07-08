@@ -425,10 +425,9 @@
 								isRandom = makeRandom(1, 3);
                                 if(isRandom==1){
 									result = input.val().slice(0, i+1) + "....포탑을 파괴했다.";
-								} else if(){
+								} else if(isRandom==2){
 									result = input.val().slice(0, i+1) + "....순간이동기를 파괴했네.";
 								}
-                                 
                                 output.text(result);
                                 isBreak = true;   
                                 break; 
@@ -443,8 +442,7 @@
 									result = input.val().slice(0, i+1) + "....물을 옮기고 있다.";
 								} else if(isRandom==2){
 									result = input.val().slice(0, i+1) + "....물을이 멈췄다.  ";
-								}
-															
+								}						
                                 output.text(result);
                                 isBreak = true;   
                                 break;	
