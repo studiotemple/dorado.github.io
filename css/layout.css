@@ -16,6 +16,7 @@ html, div{-webkit-overflow-scrolling : touch;}
 	max-width: 980px;
 	overflow: hidden;
 	margin: 0 auto;
+	padding: 0 10px;
 	text-align: center;
 	-webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -60,6 +61,7 @@ html, div{-webkit-overflow-scrolling : touch;}
 	margin: 0 auto;
 	height: 100px;
 	margin-top: 50px;
+	padding: 0 10px;
 	text-align: center;
 	-webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
