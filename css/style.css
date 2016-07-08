@@ -1,0 +1,363 @@
+/* style */
+
+html, div{-webkit-overflow-scrolling : touch;}
+
+body {
+	overflow: hidden;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #000000;
+}
+
+.wrap {
+	width: 100%;
+	height: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling : touch;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.btn-area {
+	width: 50px;
+	float: left;
+}
+
+.left-side {
+	min-width: 110px;
+	max-width: 130px;
+	height: 100%;
+	position: relative;
+	overflow-y: auto;
+	-webkit-overflow-scrolling : touch;
+	padding: 0 10px 10px 0;
+	float: left;
+	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.left-side .nav-board {
+	float: right;
+}
+
+
+.right-side {
+	width: 40px;
+	height: 100%;
+	position: relative;
+	float: left;
+	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.left-side ul {
+	overflow-y: auto;
+	-webkit-overflow-scrolling : touch;
+}
+
+.left-side ul li {
+	min-width: 100px;
+}
+
+.left-side ul li a {
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	margin-top: 10px;
+	font-size: 0.8em;
+	text-align: center;
+	background-color: #ffffff;
+	border-radius: 40px;
+	border: 1px solid #ededed;
+	box-shadow: 2px 6px 20px -9px rgba(0,0,0,0.75);	
+	-webkit-box-shadow: 2px 6px 20px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 6px 20px -9px rgba(0,0,0,0.75);
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.left-side ul li a.on {
+	border-color: #ff661f;
+	color: #ff661f;
+	font-weight: bold;
+}
+
+.left-side .area-scroll {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 30px;
+	background: rgba(255,255,255,0.5);
+    background: linear-gradient(to top, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0));
+    background: -webkit-linear-gradient(to top, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0));
+    background: -o-linear-gradient(to top, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0));
+    background: -moz-linear-gradient(to top, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0));
+    background: linear-gradient(to top, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0));
+}
+
+.main-content {
+	width: 80%;
+	height: 100%;
+	overflow-y: auto;
+	-webkit-overflow-scrolling : touch;
+	margin: 0 auto;
+	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.card-wrap {
+	margin: 10px;
+	box-shadow: 3px 6px 18px -8px rgba(0,0,0,0.75);	
+	-webkit-box-shadow: 3px 6px 18px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 6px 18px -8px rgba(0,0,0,0.75);
+}
+
+.card-thumb {
+	width: 100%;
+	height: 180px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.card-contents {
+	background-color: #ffffff;
+}
+
+.content {
+	background-color: #ffffff;
+	padding: 15px 15px 0 15px;
+}
+
+.card-wrap>.content {
+	padding-bottom: 10px;
+	background-color: #fcfcfc;
+}
+
+.title {
+	font-size: 1.0em;
+	line-height: 1.3;
+}
+
+.profile-area {
+	width: 100%;
+	margin: 10px 0;
+	overflow: hidden;
+	color: #6d6d6d;
+	font-size: 0.8em;
+}
+
+.profile {
+	float: left;
+	overflow: hidden;
+}
+
+.user-profile {
+	width: 35px;
+	float: left;
+}
+
+.user-nick {
+	float: left;
+	line-height: 35px;
+	margin-left: 10px;
+}
+
+.profile {
+	float: left;
+}
+
+.card-date {
+	float: right;
+	line-height: 35px;
+}
+
+.card-info {
+	width: 100%;
+	border-top: 1px solid #ededed;
+	vertical-align: middle;
+}
+
+.card-info ul li span, .card-info ul li i {
+	vertical-align: middle;
+}
+
+.card-info ul {
+	overflow: hidden;
+}
+
+.card-info ul li {
+	float: left;
+	width: 33.33%;
+	color: #6d6d6d;
+	font-size: 0.8em;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.card-info ul li:hover, .card-info ul li:focus {
+	background-color: #ededed;
+}
+
+.info-num {
+	margin-left: 5px;
+}
+
+
+.left-btn-area {
+	float: right;
+	padding-top: 20px;
+}
+
+.right-btn-area {
+	float: left;
+}
+
+.left-btn i, .right-btn i {
+	width: 40px;
+	height: 40px;
+	font-size: 30px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 30px;
+	background-color: #ffffff;
+	box-shadow: 3px 6px 18px -8px rgba(0,0,0,0.75);	
+	-webkit-box-shadow: 3px 6px 18px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 6px 18px -8px rgba(0,0,0,0.75);
+}
+
+.right-btn i {
+	font-size: 24px;
+}
+
+.left-btn i:hover, .left-btn i:focus, .right-btn i:hover, .right-btn i:focus {
+	background-color: #ededed;
+}
+
+.right-side-area {
+	padding-top: 10px;
+}
+
+.right-side-area .right-btn i {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.right-side-area>.right-btn {
+	padding: 0;
+}
+
+.right-btn {
+	padding-top: 10px;
+}
+
+.content-area {
+	margin-top: 10px;
+	padding: 10px;
+	background-color: #ffffff;
+	width: 100%;
+	height: 100%;
+	min-height: 100px;
+	overflow-y: auto;
+	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div.content-area {
+	vertical-align: baseline;
+}
+
+.m-tcol-c {
+    color: #706a5f;
+}
+
+.m-tcol-c {
+    color: #666;
+    word-wrap: break-word;
+}
+#tbody {
+    width: 100%;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: auto !important;
+}
+.list-blog .tbody {
+    clear: both;
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+.comment {
+	width: 100%;
+	height: 80px;
+	border: 1px solid #ededed;
+}
+
+.fixed-bottom {
+	position: fixed;
+	overflow: hidden;
+	width: 100%;
+	height: 130px;
+	bottom: 0;
+	left: 0;
+
+}
+
+.tag-area {
+	margin: 0 auto;
+	width: 80%;
+	height: 70px;
+	padding-bottom: 10px;
+	overflow: hidden;
+}
+
+.tag-dummy li {
+	float: left;
+	padding: 5px 10px;
+	margin: 5px;
+	background-color: #ffffff;
+	border-radius: 30px;
+	border: 1px solid #fdfdfd;
+	font-size: 0.9em;
+}
+
+.input-area {
+	margin: 0 auto;
+	width: 80%;
+	height: 50px;
+}
+
+.input-box {
+	background-color: #ffffff;
+	width: 100%;
+	height: 50px;
+}
+
+.fixed-input {
+	width: 100%;
+	height: 50px;
+	text-indent: 20px;
+}
+
+.dummy {
+	overflow-y: auto;
+}
+
+.dummy li {
+	line-height: 1.5;
+	padding: 5px 0;
+	border-bottom: 1px solid #ededed;
+}

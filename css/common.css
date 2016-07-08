@@ -1,0 +1,183 @@
+/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */
+*, html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /* font: inherit; */
+    vertical-align: baseline;
+     font-family: "Noto Sans", "Nanum Gothic", "Malgun Gothic", Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+ footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+/*
+blockquote, q {
+    quotes: none;
+} */
+blockquote:before, blockquote:after,q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a, a:hover, a:link, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Noto Sans Thin'), local('Noto Sans Thin'), local('Noto Sans Thin');
+    src: url(../fonts/NotoSansKR-Thin-subset.eot);
+    src: url(../fonts/NotoSansKR-Thin-subset.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSansKR-Thin-subset.woff) format('woff'),
+    url(../fonts/NotoSansKR-Thin-subset.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Noto Sans Light'), local('Noto Sans Light'), local('Noto Sans Light');
+    src: url(../fonts/NotoSansKR-Light-subset.eot);
+    src: url(../fonts/NotoSansKR-Light-subset.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSansKR-Light-subset.woff) format('woff'),
+    url(../fonts/NotoSansKR-Light-subset.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Noto Sans DemiLight'), local('Noto Sans DemiLight'), local('Noto Sans DemiLight');
+    src: url(../fonts/NotoSansKR-DemiLight-subset.eot);
+    src: url(../fonts/NotoSansKR-DemiLight-subsett.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSansKR-DemiLight-subset.woff) format('woff'),
+    url(../fonts/NotoSansKR-DemiLight-subset.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans Regular'), local('Noto Sans Regular'), local('Noto Sans Regular');
+    src: url(../fonts/NotoSansKR-Regular-subset.eot);
+    src: url(../fonts/NotoSansKR-Regular-subset.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSansKR-Regular-subset.woff) format('woff'),
+    url(../fonts/NotoSansKR-Regular-subset.otf) format('truetype');
+
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Noto Sans Medium'), local('Noto Sans Medium'), local('Noto Sans Medium');
+    src: url(../fonts/NotoSansKR-Medium-subset.eot);
+    src: url(../fonts/NotoSansKR-Medium-subset.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSansKR-Medium-subset.woff) format('woff'),
+    url(../fonts/NotoSansKR-Medium-subset.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Noto Sans Bold'), local('Noto Sans Bold'), local('Noto Sans Bold');
+    src: url(../fonts/NotoSansKR-Bold-subset.eot);
+    src: url(../fonts/NotoSansKR-Bold-subset?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSansKR-Bold-subset.woff) format('woff'),
+    url(../fonts/NotoSansKR-Bold-subset.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto Sans Black'), local('Noto Sans Black'), local('Noto Sans Black');
+    src: url(../fonts/NotoSansKR-Black-subset.eot);
+    src: url(../fonts/NotoSansKR-Black-subset.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSansKR-Black-subset.woff) format('woff'),
+    url(../fonts/NotoSansKR-Black-subset.otf) format('truetype')
+     url(../fonts/NotoSansKR-Black-subset.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Nanum Gothic'), local('Nanum Gothic'), local('Nanum Gothic');
+    src: url(../fonts/NanumGothic-subset.eot);
+    src: url(../fonts/NanumGothic-subset.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic-subset.woff) format('woff'),
+    url(../fonts/NanumGothic-subset.otf) format('truetype')
+     url(../fonts/NanumGothic-subset.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Nanum Gothic Bold'), local('Nanum Gothic Bold'), local('Nanum Gothic Bold');
+    src: url(../fonts/NanumGothicBold-subset.eot);
+    src: url(../fonts/NanumGothicBold-subset?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothicBold-subset.woff) format('woff'),
+    url(../fonts/NanumGothicBold-subset.otf) format('truetype')
+     url(../fonts/NanumGothicBold-subset.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Nanum Myeongjo';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Nanum Gothic'), local('Nanum Gothic'), local('Nanum Gothic');
+    src: url(../fonts/NanumMyeongjo-subset.eot);
+    src: url(../fonts/NNanumMyeongjo-subset.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumMyeongjo-subset.woff) format('woff'),
+    url(../fonts/NanumMyeongjo-subset.otf) format('truetype')
+     url(../fonts/NanumMyeongjo-subset.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Nanum Myeongjo';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Nanum Gothic Bold'), local('Nanum Gothic Bold'), local('Nanum Gothic Bold');
+    src: url(../fonts/NanumMyeongjoBold-subset.eot);
+    src: url(../fonts/NanumMyeongjoBold-subset.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumMyeongjoBold-subset.woff) format('woff'),
+    url(../fonts/NanumMyeongjoBold-subset.otf) format('truetype')
+     url(../fonts/NanumMyeongjoBold-subset.ttf) format('truetype');
+}
+
+
+/* ondeal shop v3 start */
+

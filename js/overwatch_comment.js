@@ -1,53 +1,8 @@
-
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <meta name="description" content="hanamura">
-    <meta name="author" content="hanamura">
-    <meta http-equiv="pragma" content="no-cache">
-    <!-- 안드로이드 홈화면추가시 상단 주소창 제거 -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" href="/img/favicon.ico">
-    <!-- ios홈화면추가시 상단 주소창 제거 -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-icon" href=""> 
-
-
-    <title>하나무라로 떠납니다.</title>
-
-    <link rel="apple-touch-icon" sizes="192x192" href="">
-    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="">
-    <link rel="shortcut icon" href="">
-    <link href="./css/common.css?t=201606200855" rel="stylesheet">
-    <link href="./css/layout.css?t=201606200855" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <script type="text/javascript" src="./js/jquery/jquery-3.0.0.min.js"></script>
-    <script type="text/javascript" src="./js/clipboard.js"></script>
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-52971761-2', 'auto');
-      ga('send', 'pageview');
-
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-
-            var input, output, btn, clip, mix, result, isBreak, isRandom;
+var input, output, btn, mix, result, isRandom;
 
             input = $('.input');
             output = $('.result');
             btn = $('.btn');
-            clip = $('.btn-clip');
 
             function makeRandom(min, max){
                 var RandVal = Math.random() * (max- min) + min;
@@ -56,9 +11,9 @@
 
             function mixing(){
 
-                isBreak = false;
+                var isBreak = false;
 
-                for(var i=input.val().length; i >= 0; i--){
+                for(i=input.val().length; i >= 0; i--){
 
                         mix = input.val().charAt(i);
 
@@ -394,97 +349,33 @@
                             case "순" :
                                 result = input.val().slice(0, i+1) + "....간이동기 가동. 빠르게 움직여요!"; 
                                 output.text(result);
-                                isBreak = true;  
-                                break; 
+                                isBreak = true;   
                             case "젠" :
                                 result = input.val().slice(0, i+1) + "....야타가 왔소"; 
                                 output.text(result);
-                                isBreak = true;  
-                                break; 
+                                isBreak = true;   
                             case "진" :
                                 result = input.val().slice(0, i+1) + "....정한 자아에는 형체가 없는 법."; 
                                 output.text(result);
-                                isBreak = true; 
-                                break; 
+                                isBreak = true;  
                             case "고" :
                                 result = input.val().slice(0, i+1) + "....요를 체험하시오."; 
                                 output.text(result);
-                                isBreak = true;
-                                break;  
+                                isBreak = true;  
                             case "눈" :
                                 result = input.val().slice(0, i+1) + "....동자로 들어가시오."; 
                                 output.text(result);
-                                isBreak = true; 
-                                break; 
+                                isBreak = true;  
                             case "데" :
                                 result = input.val().slice(0, i+1) + "....자뷰, 느껴본 적 있어?"; 
                                 output.text(result);
-                                isBreak = true;   
-                                break;   
+                                isBreak = true;                                                                     
                             default : 
                                 break;
                         } 
                             
                         if(isBreak){
                             break;
-                        } 
-                        
+                        }
                 }
             };
-
-            btn.on('click', function(){
-                if (input.val() == false) {
-                    alert("내용을 입력해 주세요.");
-                } else {
-                    mixing();  
-                    if(output.text() == "이곳에 번역된 내용이 표시됩니다."){
-                        alert("번역할 내용이 마땅치 않네요... 다른 내용을 입력해 보세요.");
-                    }
-                }
-            });
-
-            clip.on('click', function(){
-                if(input.val() == false){
-                    alert("내용을 입력해 주세요.");
-                } else if(output.text() == "이곳에 번역된 내용이 표시됩니다."){
-                    alert("번역할 내용이 마땅치 않네요... 다른 내용을 입력해 보세요.");
-                } else {
-                    input.val();
-                    copyToClipboard(output.text());    
-                }
-
-                
-                
-            });
-
-           function copyToClipboard(text) {
-              window.prompt("Ctrl+C를 누른후 확인(또는 Enter)을 누르면 클립보드에 복사됩니다.", text);
-            }
-
-        });
-    </script>
-
-<body>
-    <div class="wrap">
-        <div class="container">
-            <div class="area-transper">
-                <h1 class="title">오버워치 대사로 말해요!</h1>
-                <div class="guide">
-                    <p>말을 줄이지 말고 그냥 쓰고 싶은 내용을 자유롭게 입력하세요.</p>
-                    <p>입력한 내용 중 오버워치와 연결할만한 것이 있다면 번역해 드립니다.</p>
-                    <p class="sub">이 사이트는 무료호스팅이라 언제 뻗을지 모름.</p>
-                </div>
-                <textarea class="input" placeholder="오버워치 대사로 번역할 내용을 입력해주세요."></textarea>
-                <button class="btn">입력한 내용 대사로 전환하기</button>
-            </div>
-            <div class="area-result">
-                    <p class="result">이곳에 번역된 내용이 표시됩니다.</p>
-                     <button class="btn-clip">번역된 내용 클립보드로 복사</button>
-            </div>
-
-            
-        </div>
-    </div>
-</body>
-
-</html>
