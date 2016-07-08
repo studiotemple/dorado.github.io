@@ -447,6 +447,11 @@
 															
                                 output.text(result);
                                 isBreak = true;   
+                                break;	
+							case "요" :
+                                result = input.val().slice(0, i+1) + "....요시! 적 포탑을 파괴했다."; 
+                                output.text(result);
+                                isBreak = true;   
                                 break;		
                             default : 
                                 break;
