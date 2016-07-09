@@ -1,6 +1,9 @@
 /* style */
 
-html, div{-webkit-overflow-scrolling : touch;}
+html, body, div {
+	-webkit-overflow-scrolling : touch;
+
+}
 
 button:focus {
 	outline: none;
@@ -13,20 +16,24 @@ input:focus {
 
 .wrap {
 	width: 100%;
+
 }
 
 .container {
 	width: 100%;
+
 }
 
 .main-visual {
 	width: 100%;
 	background-position: center center;
 	background-size: cover;
-	background-image:  url('../images/mercy-theatrical-standard.jpg');
+	background-image: url('../images/mercy-theatrical-standard.jpg');
 }
 
 .dim {
+	width: 100%;
+	height: 100%;
 	background-color: rgba(0,0,0,0.7);
 }
 
@@ -84,7 +91,7 @@ input:focus {
 	border-radius: 40px;
 	resize: none;
 	overflow: hidden;
-	margin-top: 30px;
+	margin-top: 20px;
 	margin-bottom: 30px;
 	outline: none;
 	-webkit-appearance: none;  /* 브라우저별 기본 스타일링 제거 */
@@ -95,32 +102,24 @@ input:focus {
           box-sizing: border-box;
 }
 
-.btn {
-	min-width: 50%;
-	height: 50px;
-	font-size: 0.9em;
-	padding:0 10px;	
-	border-radius: 30px;
-	color: #ffffff;
-	background-color: #0AA988;
-	margin-bottom: 100px;
-	cursor: pointer;
-}
+
 
 .area-result {
-	padding: 50px;
+	padding: 10px;
 }
 
 .list {
+	clear: both;
 	margin-bottom: 30px;
-	font-size: 2.0em;
+	font-size: 1.6em;
+	color: #a69b79;
 }
 
 .result {
 	width: 100%;
 	padding: 50px;
 	line-height: 24px;
-	color: #2D2D2D;
+	color: #ffffff;
 	border: 1px solid #E1E1E1;
 	margin-bottom: 10px;
 	webkit-box-sizing: border-box;
@@ -128,16 +127,34 @@ input:focus {
           box-sizing: border-box;
 }
 
+.btn {
+	float: left;
+	width: 30%;
+	height: 50px;
+	font-size: 0.9em;
+	padding:0 10px;	
+	border-radius: 30px;
+	color: #FFB300;
+	background-color: #0b0a07;
+	margin-bottom: 30px;
+	cursor: pointer;
+}
+
 .btn-clip {
-	min-width: 50%;
+	float: right;
+	width: 68%;
 	height: 50px;
 	font-size: 0.9em;
 	padding:0 10px;	
 	border-radius: 30px;
 	color: #ffffff;
-	background-color: #FFB300;
+	background-color: #0d8235;
 	margin-bottom: 100px;
 	cursor: pointer;
 	margin-bottom: 30px;
+}
+
+.btn-area {
+	width: 100%;
 }
 
