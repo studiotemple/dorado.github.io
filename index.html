@@ -65,7 +65,12 @@
             }
 
             var docHeight = $(document).height();
-            console.log(docHeight);
+            $('.main-visual').css('height', docHeight);
+
+            $(window).resize(function() {
+                docHeight = $(document).height();
+                $('.main-visual').css('height', docHeight);
+            });
 
             $('.main-visual').css('height', docHeight);
 
