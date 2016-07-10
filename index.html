@@ -599,7 +599,11 @@
                                 output.text(result);
                                 isBreak = true;   
                                 break;    
-
+                            case "개" :
+                                result = input.val().slice(0, i+1) + "....인적인 감정은 없어요."; 
+                                output.text(result);
+                                isBreak = true;   
+                                break;
 
                             default : 
                                 break;
@@ -671,7 +675,7 @@
                             <button class="btn">다시 쓰기</button>
                             <button class="btn-clip">번역된 내용 클립보드로 복사</button>
                         </div>
-                        <p class="list">현재 총 115개의 대사를 지원합니다. <a class="link" href="https://docs.google.com/spreadsheets/d/1lXjkjPGNQhiOOFMceLD2k6ouEpDVHFncCvU-_OJ26jY/edit?usp=sharing" target="_blank">대사 목록 보기</a></p>
+                        <p class="list">현재 총 116개의 대사를 지원합니다. <a class="link" href="https://docs.google.com/spreadsheets/d/1lXjkjPGNQhiOOFMceLD2k6ouEpDVHFncCvU-_OJ26jY/edit?usp=sharing" target="_blank">대사 목록 보기</a></p>
 
                         <p class="email">대사 제보는 이곳으로 : </p>
                         <a class="email-link" href="mailto:studiotemple81@gmail.com" target="_blank">studiotemple81@gmail.com</a>
