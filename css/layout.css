@@ -110,7 +110,8 @@ input:focus {
 .list {
 	clear: both;
 	margin-bottom: 30px;
-	font-size: 1.6em;
+	font-size: 1.4em;
+	line-height: 1.2;
 	color: #a69b79;
 }
 
@@ -165,4 +166,11 @@ a.email-link {
 	margin-top: 5px;
 	text-decoration: underline;
 	color: #bdbdbd;
+	margin-bottom: 20px;
+	display: block;
+}
+
+a.link {
+	text-decoration: underline;
+	color: #FFB300;
 }

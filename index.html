@@ -62,8 +62,6 @@
                 $('.main-visual').css('height', docHeight);
             });
 
-            $('.main-visual').css('height', docHeight);
-
            function copyToClipboard(text) {
               window.prompt("Ctrl+C를 누른후 확인(또는 Enter)을 누르면 클립보드에 복사됩니다.", text);
             }
@@ -172,9 +170,9 @@
                             case "류" :
                                 isRandom = makeRandom(1,5);
                                 if(isRandom == 1){
-                                    result = input.val().slice(0, i+1) + "...-진노 켄오 쿠라에."; 
+                                    result = input.val().slice(0, i+1) + "...-진노 켄오 쿠라에!"; 
                                 } else if (isRandom == 2 || isRandom == 3){
-                                    result = input.val().slice(0, i+1) + "...요, 와가 테키오 쿠라에!."; 
+                                    result = input.val().slice(0, i+1) + "...요, 와가 테키오 쿠라에!"; 
                                 } else if(isRandom == 4){
                                     result = input.val().slice(0, i+1) + "...-와 와레니 나루!(용이 내가 된다!)"; 
                                 }
@@ -252,7 +250,12 @@
                                 isBreak = true;
                                 break;   
                             case "포" :
-                                result = input.val().slice(0, i+1) + "...화 개시!"; 
+                                isRandom = makeRandom(1,5);
+                                if(isRandom == 1 || isRandom == 2){
+                                    result = input.val().slice(0, i+1) + "...화 개시!"; 
+                                } else if(isRandom == 3){
+                                    result = input.val().slice(0, i+1) + "...탑 설치!"; 
+                                }
                                 output.text(result);
                                 isBreak = true;
                                 break;    
@@ -305,19 +308,14 @@
                                 result = input.val().slice(0, i+1) + "...사 숙녀 여러분! 한 번 달려보자고!"; 
                                 output.text(result);
                                 isBreak = true;
-                                break;  
-                            case "신" :
-                                result = input.val().slice(0, i+1) + "...사 숙녀 여러분! 한 번 달려보자고!"; 
-                                output.text(result);
-                                isBreak = true;
-                                break;  
+                                break;    
                             case "토" :
                                 result = input.val().slice(0, i+1) + "...르비욘! 작업준비 끝!"; 
                                 output.text(result);
                                 isBreak = true;
                                 break;  
                             case "초" :
-                                result = input.val().slice(0, i+1) + "...초오오↗고오오↗여어어어얼↗ 용↗광↗로오오오오↗!!!"; 
+                                result = input.val().slice(0, i+1) + "...오오↗고오오↗여어어어얼↗ 용↗광↗로오오오오↗!!!"; 
                                 output.text(result);
                                 isBreak = true;
                                 break;   
@@ -342,13 +340,15 @@
                                 isBreak = true;
                                 break;  
                             case "시" :
-                                isRandom = makeRandom(1, 8);
+                                isRandom = makeRandom(1, 9);
                                 if (isRandom==1 || isRandom==2 || isRandom==3){
                                     result = input.val().slice(0, i+1) + "....스템 정상. D.Va! 출격 준비 완료."; 
                                 } else if(isRandom==4 || isRandom==5){
                                     result = input.val().slice(0, i+1) + "....메트라, 보고합니다."; 
                                 } else if(isRandom==6 || isRandom==7) {
                                     result = input.val().slice(0, i+1) + "....노 니오이카... 요시, 이츠데모 코이!(죽음의 냄새인가... 좋아, 언제든지 와라!)";
+                                } else if(isRandom==8) {
+                                    result = input.val().slice(0, i+1) + "....공의 폭풍에 온 것을 환영하네!)";
                                 }
                                 output.text(result);
                                 isBreak = true;
@@ -379,7 +379,7 @@
                                 isBreak = true;
                                 break;   
                             case "자" :
-                                result = input.val().slice(0, i+1) + "....리야. 임무 대기 중."; 
+                                result = input.val().slice(0, i+1) + "....리야. 임무 대기중."; 
                                 output.text(result);
                                 isBreak = true;
                                 break;   
@@ -510,17 +510,12 @@
                                 isBreak = true;   
                                 break;
                             case "혼" :
-                                result = input.val().slice(0, i+1) + "....키오 미세테미로 .(진짜 실력을 보여 봐라)"; 
+                                result = input.val().slice(0, i+1) + "....키오 미세테미로.(진짜 실력을 보여 봐라)"; 
                                 output.text(result);
                                 isBreak = true;   
                                 break;    
                             case "여" :
                                 result = input.val().slice(0, i+1) + "....길 죽음으로 쓸어주마!"; 
-                                output.text(result);
-                                isBreak = true;   
-                                break; 
-                            case "포" :
-                                result = input.val().slice(0, i+1) + "....탑 설치!"; 
                                 output.text(result);
                                 isBreak = true;   
                                 break; 
@@ -554,11 +549,17 @@
                                 isBreak = true;   
                                 break; 
                             case "내" :
-                                risRandom = makeRandom(1, 3);
+                                risRandom = makeRandom(1, 6);
                                 if(isRandom==1){
                                     result = input.val().slice(0, i+1) + "....새끼!(토르비욘)"; 
                                 } else if(isRandom==2){
                                     result = input.val().slice(0, i+1) + "....이름은 맥크리."; 
+                                } else if(isRandom==3){
+                                    result = input.val().slice(0, i+1) + "....안의 용이 꿈틀댄다.";
+                                } else if(isRandom==4){
+                                    result = input.val().slice(0, i+1) + "....화살은 표적을 찾아낸다.";
+                                } else if(isRandom==5){
+                                    result = input.val().slice(0, i+1) + "....화살은 빗나가지 않아.";
                                 }
                                 output.text(result);
                                 isBreak = true;   
@@ -577,7 +578,12 @@
                                 result = input.val().slice(0, i+1) + "....↘왑↗!"; 
                                 output.text(result);
                                 isBreak = true;   
-                                break;   
+                                break;  
+                            case "뚜" :
+                                result = input.val().slice(0, i+1) + "....↘왑↗!"; 
+                                output.text(result);
+                                isBreak = true;   
+                                break;     
                             case "생" :
                                 isRandom = makeRandom(1, 3);
                                 if(isRandom==1){
@@ -587,7 +593,13 @@
                                 }
                                 output.text(result);
                                 isBreak = true;   
+                                break;  
+                            case "보" :
+                                result = input.val().slice(0, i+1) + "....이지 않는 것을 봐라."; 
+                                output.text(result);
+                                isBreak = true;   
                                 break;    
+
 
                             default : 
                                 break;
@@ -659,10 +671,10 @@
                             <button class="btn">다시 쓰기</button>
                             <button class="btn-clip">번역된 내용 클립보드로 복사</button>
                         </div>
-                        <p class="list">현재 총 80개의 대사를 지원합니다.</p>
+                        <p class="list">현재 총 115개의 대사를 지원합니다. <a class="link" href="https://docs.google.com/spreadsheets/d/1lXjkjPGNQhiOOFMceLD2k6ouEpDVHFncCvU-_OJ26jY/edit?usp=sharing" target="_blank">대사 목록 보기</a></p>
 
                         <p class="email">대사 제보는 이곳으로 : </p>
-                        <a class="email-link" href="mailto:studiotemple81@gmail.com">studiotemple81@gmail.com</a>
+                        <a class="email-link" href="mailto:studiotemple81@gmail.com" target="_blank">studiotemple81@gmail.com</a>
                 </div>
             </div>
         </div>
