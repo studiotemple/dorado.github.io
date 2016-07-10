@@ -604,7 +604,41 @@
                                 output.text(result);
                                 isBreak = true;   
                                 break;
-
+                            case "그" :
+                                result = input.val().slice(0, i+1) + "....대안에 혼돈이 있소."; 
+                                output.text(result);
+                                isBreak = true;   
+                                break;
+                            case "궁" :
+                                isRandom = makeRandom(1, 3);
+                                if(isRandom==1){
+                                    result = input.val().slice(0, i+1) + "....극기 충전 중이다."; 
+                                } else if(isRandom==2){
+                                    result = input.val().slice(0, i+1) + "....극기가 거의 준비됐다."; 
+                                }
+                                output.text(result);
+                                isBreak = true;   
+                                break;
+                            case "누" :
+                                result = input.val().slice(0, i+1) + "....가 장의사 좀 불러."; 
+                                output.text(result);
+                                isBreak = true;   
+                                break;
+                            case "발" :
+                                result = input.val().slice(0, i+1) + "....할라를 향하여."; 
+                                output.text(result);
+                                isBreak = true;   
+                                break;
+                            case "불" :
+                                result = input.val().slice(0, i+1) + "....이 붙었소. 하지만 소화기는 필요 없소."; 
+                                output.text(result);
+                                isBreak = true;   
+                                break;  
+                            case "터" :
+                                result = input.val().slice(0, i+1) + "....트려 버려! 그러니까 저놈들을! 거점 말고!"; 
+                                output.text(result);
+                                isBreak = true;   
+                                break;           
                             default : 
                                 break;
                         } 
@@ -675,7 +709,7 @@
                             <button class="btn">다시 쓰기</button>
                             <button class="btn-clip">번역된 내용 클립보드로 복사</button>
                         </div>
-                        <p class="list">현재 총 116개의 대사를 지원합니다. <a class="link" href="https://docs.google.com/spreadsheets/d/1lXjkjPGNQhiOOFMceLD2k6ouEpDVHFncCvU-_OJ26jY/edit?usp=sharing" target="_blank">대사 목록 보기</a></p>
+                        <p class="list">현재 총 122개의 대사를 지원합니다. <a class="link" href="https://docs.google.com/spreadsheets/d/1lXjkjPGNQhiOOFMceLD2k6ouEpDVHFncCvU-_OJ26jY/edit?usp=sharing" target="_blank">대사 목록 보기</a></p>
 
                         <p class="email">대사 제보는 이곳으로 : </p>
                         <a class="email-link" href="mailto:studiotemple81@gmail.com" target="_blank">studiotemple81@gmail.com</a>
