@@ -638,7 +638,17 @@
                                 result = input.val().slice(0, i+1) + "....트려 버려! 그러니까 저놈들을! 거점 말고!"; 
                                 output.text(result);
                                 isBreak = true;   
-                                break;           
+                                break;
+                            case "새" :
+                                isRandom = makeRandom(1, 5);
+                                if(isRandom==1 || isRandom==3 || isRandom==4){
+                                    result = input.val().slice(0, i+1) + "....로운 영웅은 언제나 환영이야."; 
+                                } else if(isRandom==2){
+                                    result = input.val().slice(0, i+1) + "....로운 영웅은 언제나 환영이야.(너만 빼고.)"; 
+                                } 
+                                output.text(result);
+                                isBreak = true;   
+                                break;    
                             default : 
                                 break;
                         } 
