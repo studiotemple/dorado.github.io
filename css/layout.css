@@ -25,15 +25,19 @@ input:focus {
 }
 
 .main-visual {
-	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
 	background-position: center center;
 	background-size: cover;
 	background-image: url('../images/mercy-theatrical-standard.jpg');
+	z-index: -1;
 }
 
 .dim {
-	width: 100%;
-	height: 100%;
+	height: 100vh;
 	background-color: rgba(0,0,0,0.7);
 }
 
@@ -60,7 +64,7 @@ input:focus {
 .guide {
 	color: #f3f3f3;
 	line-height: 1.4;
-	font-size: 0.9em;	
+	font-size: 0.9em;
 }
 
 .sub {
@@ -132,7 +136,7 @@ input:focus {
 	width: 30%;
 	height: 50px;
 	font-size: 0.9em;
-	padding:0 10px;	
+	padding:0 10px;
 	border-radius: 30px;
 	color: #FFB300;
 	background-color: #0b0a07;
@@ -145,7 +149,7 @@ input:focus {
 	width: 68%;
 	height: 50px;
 	font-size: 0.9em;
-	padding:0 10px;	
+	padding:0 10px;
 	border-radius: 30px;
 	color: #ffffff;
 	background-color: #0d8235;
