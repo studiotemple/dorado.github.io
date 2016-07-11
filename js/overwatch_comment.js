@@ -296,7 +296,12 @@ var commentList = {
 };
 var commentCount = 0;
 (function() {
-    for (var key in commentList) commentCount += commentList[key].length;
+    // 대사 개수를 센다. 확률 조정에 의해 늘어난 것들은 세지 않는다.
+    for (var key in commentList)
+        commentCount += commentList[key].reduce(function(a, i) {
+            if (a.indexOf(i) === -1) a.push(i);
+            return a;
+        }, []).length;
 })();
 
 function makeRandom(min, max) {
