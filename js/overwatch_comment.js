@@ -294,27 +294,24 @@ var commentList = {
         "D.Va 온라인!"
     ]
 };
+var commentCount = 0;
+(function() {
+    for (var key in commentList) commentCount += commentList[key].length;
+})();
 
-var input = $('.input');
-var output = $('.result');
-var btn = $('.btn');
-
-function makeRandom(min, max){
+function makeRandom(min, max) {
     var RandVal = Math.random() * (max-min) + min;
     return Math.floor(RandVal);
 }
 
-function mixing(){
-    var original = input.val();
-
+function mixing(original) {
     for(var i=original.length-1; i >= 0; i--){
         var mix = original.charAt(i);
 
         if (mix in commentList) {
             var list = commentList[mix];
             var random = makeRandom(0, list.length); // length가 0이면 항상 0
-            output.text(original.substr(0, i+1) + "..." + list[random].substr(1));
-            return;
+            return original.substr(0, i+1) + "..." + list[random].substr(1);
         }
     }
 }
