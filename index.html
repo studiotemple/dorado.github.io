@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="192x192" href="">
     <link rel="shortcut icon" href="">
     <link href="./css/common.css?t=201607070855" rel="stylesheet">
-    <link href="./css/layout.css?t=201607080855" rel="stylesheet">
+    <link href="./css/layout.css?t=201607081155" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script type="text/javascript" src="./js/jquery/jquery-3.0.0.min.js"></script>
@@ -45,15 +45,7 @@
             var btn = $('.btn');
             var clip = $('.btn-clip');
 
-            var docHeight = $(document).height();
-            $('.main-visual').css('height', docHeight);
-
-            $('.count').text(commentCount.toString());
-
-            $(window).resize(function() {
-                docHeight = $(document).height();
-                $('.main-visual').css('height', docHeight);
-            });
+            $('.count').text(commentCount);
 
             function copyToClipboard(text) {
                 window.prompt("Ctrl+C를 누른후 확인(또는 Enter)을 누르면 클립보드에 복사됩니다.", text);
@@ -100,31 +92,31 @@
 <body id="wrapper">
     <div class="wrap">
         <div class="container">
-            <div class="main-visual">
-                <div class="dim">
-                    <div class="guide-container">
-                        <h1 class="title">시계드립<br />생성기</h1>
-                        <div class="guide">
-                            <p>쓰고 싶은 내용을 자유롭게 입력하세요. 맞출필요 없어요.</p>
-                            <p>입력한 내용 중 오버워치와 연결할만한 것이 있다면 번역해 드립니다.</p>
-                            <p class="sub">이 사이트는 무료호스팅이라 언제 뻗을지 모름.</p>
-                        </div>
-                    </div>
-                    <div class="area-transper">
-                        <textarea class="input" placeholder="번역할 내용을 입력해주세요."></textarea>
-                    </div>
-                    <div class="area-result">
-                        <p class="result">이곳에 번역된 내용이 표시됩니다.</p>
-                        <div class="btn-area">
-                            <button class="btn">다시 쓰기</button>
-                            <button class="btn-clip">번역된 내용 클립보드로 복사</button>
-                        </div>
-                        <p class="list">현재 총 <span class='count'></span>개의 대사를 지원합니다.
-                        <a class="link" href="https://docs.google.com/spreadsheets/d/1lXjkjPGNQhiOOFMceLD2k6ouEpDVHFncCvU-_OJ26jY/edit?usp=sharing" target="_blank">대사 목록 보기</a></p>
-
-                        <p class="email">대사 제보는 이곳으로 : </p>
-                        <a class="email-link" href="mailto:studiotemple81@gmail.com" target="_blank">studiotemple81@gmail.com</a>
+            <div class="guide-container">
+                <h1 class="title">시계드립<br />생성기</h1>
+                <div class="guide">
+                    <p>쓰고 싶은 내용을 자유롭게 입력하세요. 맞출필요 없어요.</p>
+                    <p>입력한 내용 중 오버워치와 연결할만한 것이 있다면 번역해 드립니다.</p>
+                    <p class="sub">이 사이트는 무료호스팅이라 언제 뻗을지 모름.</p>
                 </div>
+            </div>
+            <div class="area-transper">
+                <textarea class="input" placeholder="번역할 내용을 입력해주세요."></textarea>
+            </div>
+            <div class="area-result">
+                <p class="result">이곳에 번역된 내용이 표시됩니다.</p>
+                <div class="btn-area">
+                    <button class="btn">다시 쓰기</button>
+                    <button class="btn-clip">번역된 내용 클립보드로 복사</button>
+                </div>
+                <p class="list">현재 총 <span class='count'></span>개의 대사를 지원합니다.
+                <a class="link" href="https://docs.google.com/spreadsheets/d/1lXjkjPGNQhiOOFMceLD2k6ouEpDVHFncCvU-_OJ26jY/edit?usp=sharing" target="_blank">대사 목록 보기</a></p>
+
+                <p class="email">대사 제보는 이곳으로 : </p>
+                <a class="email-link" href="mailto:studiotemple81@gmail.com" target="_blank">studiotemple81@gmail.com</a>
+            </div>
+            <div class="main-visual">
+                <div class="dim"></div>
             </div>
         </div>
     </div>
