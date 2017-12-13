@@ -45,6 +45,7 @@
             var btn = $('.btn');
             var clip = $('.btn-clip');
             var currentDate = new Date();
+            var errcode = '19205';
 
             $('.count').text(commentCount);
 
@@ -65,6 +66,8 @@
                       'timingVar': 'lookup',
                       'timingValue': 123
                     });
+                ga('send', 'event', '클라이언트', 'click', '다운로드끝', errcode);
+                ga('send', 'event', '클라이언트', 'error', errcode, errcode);
                 if(input.val() == false){
                     alert("내용을 입력해 주세요.");
                 } else if(output.text() == "이곳에 번역된 내용이 표시됩니다."){
