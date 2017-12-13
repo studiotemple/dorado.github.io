@@ -58,7 +58,8 @@
             });
 
             clip.on('click', function(){
-                ga('send', 'event', 'launcher_function', 'click', 'check_file');
+                var currentDate = new Date();
+                ga('send', 'event', '클라이언트', 'click', '다운로드시작', currentDate);
                 ga('send', 'timing', {
                       'timingCategory': 'category',
                       'timingVar': 'lookup',
