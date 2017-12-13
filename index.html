@@ -48,6 +48,8 @@
             var btn3 = $('.btn3');
             var btn4 = $('.btn4');
             var btn5 = $('.btn5');
+            var btn6 = $('.btn6');
+            var btn7 = $('.btn7');
             var clip = $('.btn-clip');
             var currentDate = new Date();
             var errcode = 19200;
@@ -58,12 +60,12 @@
             $('.count').text(commentCount);
             
             btn1.on('click', function(){
-                ga('send', 'event', 'Downloads', 'click', 'Download-start');
+                ga('send', 'event', 'Downloads', 'Download-start', '세션아이디_acedv');
                 console.log('ga sanding btn1');
             });
             
             btn2.on('click', function(){
-                ga('send', 'event', 'Downloads', 'click', 'Download-complete');
+                ga('send', 'event', 'Downloads', 'Download-complete', '세션아이디_acedv');
                 console.log('ga sanding btn2');
             });
             
@@ -81,6 +83,16 @@
             btn5.on('click', function(){
                 ga('send', 'event', 'stopCase', 'userCancel', errcode2);
                 console.log('ga sanding btn5');
+            });
+            
+            btn6.on('click', function(){
+                ga('send', 'event', 'Download', 'Download-time', '세션아이디_987761', '54672');
+                console.log('ga sanding btn6');
+            });
+            
+            btn6.on('click', function(){
+                ga('send', 'event', 'Download', 'Download-time', '세션아이디_2322526', '824672');
+                console.log('ga sanding btn6');
             });
 
             function copyToClipboard(text) {
@@ -144,11 +156,16 @@
                 <div class="btn-area">
                     <button class="btn">다시 쓰기</button>
                     <button class="btn-clip">번역된 내용 클립보드로 복사</button>
-                    <button class="btn1">다운로드시작</button>
-                    <button class="btn2">다운로드성공이벤트</button>
-                    <button class="btn3">오류발생</button>
-                    <button class="btn4">사용자중지</button>
-                    <button class="btn5">창닫기</button>
+                    <style>.test_btn button{width:300px; height: 60px; clear:both; cursor: pointer;}</style>
+                    <div class="test_btn">
+                        <button class="btn1">다운로드시작</button>
+                        <button class="btn2">다운로드성공이벤트</button>
+                        <button class="btn3">오류발생</button>
+                        <button class="btn4">사용자중지</button>
+                        <button class="btn5">창닫기</button>
+                        <button class="btn6">다운로드소요시간</button>
+                        <button class="btn7">다운로드소요시간투</button>
+                    </div>
                 </div>
 
                 <p class="list">현재 총 <span class='count'></span>개의 대사를 지원합니다.
