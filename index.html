@@ -58,6 +58,7 @@
             });
 
             clip.on('click', function(){
+                ga('send', 'event', 'launcher_function', 'click', 'check_file');
                 if(input.val() == false){
                     alert("내용을 입력해 주세요.");
                 } else if(output.text() == "이곳에 번역된 내용이 표시됩니다."){
