@@ -19,7 +19,7 @@
     <link href="./css/common.css?t=201607070855" rel="stylesheet">
     <link href="./css/layout.css?t=201607081155" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/jquery/jquery-3.0.0.min.js"></script>
     <!-- <script type="text/javascript" src="./js/overwatch_comment.js"></script> -->
 
@@ -49,6 +49,7 @@
             var sec = 0;
             var errCode = 0;
             var errCode1 = 0;
+            var errCode2 = 0;
 
             function makeRandom(min, max) {
                 var RandVal = Math.random() * (max-min) + min;
@@ -64,6 +65,7 @@
             sec = mixing(2318);
             errCode = mixing(5);
             errCode1 = mixing(3);
+            errCode2 = mixing(2);
 
             btn.on('click', function(){
                 ga('send', 'event', 're-DownLoads', 'Download-start', sessionId);
@@ -102,8 +104,32 @@
                 ga('send', 'event', 'StopCase', 'c2003', 'window_close');
                 console.log(sessionId);
             });
+
+            btn7.on('click', function(){
+                var filename = "";
+                if (errCode2 > 0 && errCode2 < 5000){
+                  filename ="OSChecker.dll";
+                } else if (errCode2 > 5000 && errCode2 < 10000 ){
+                  filename ="Launcher.exe";
+                } else if (errCode2 > 10000 && errCode2 < 15000 ){
+                  filename ="local.db";
+                } else if (errCode2 > 15000 && errCode2 < 20000 ){
+                  filename ="DOWNLOADEDRESOURCES.DAT";
+                }
+                ga('send', 'event', 'StopCase', errCode2, 'window_close');
+                console.log(errCode2);
+                console.log(filename);
+            });
         });
     </script>
+    <style>
+    button {
+      width: 300px;
+      height: 50px;
+      margin: 10px;
+      }
+    </style>
+</head>
 <body id="wrapper">
     <div class="wrap">
         <div class="container">
@@ -117,6 +143,7 @@
                         <button class="btn4">오류발생1</button>
                         <button class="btn5">사용자중지</button>
                         <button class="btn6">창닫기</button>
+                        <button class="btn7">오류발생파일</button>
                     </div>
                 </div>
 
