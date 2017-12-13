@@ -61,7 +61,7 @@
 
             clip.on('click', function(){
                 ga('send', 'event', '클라이언트', 'click', '다운로드끝', errcode);
-                ga('send', 'event', '클라이언트', 'error', errcode, errcode);
+                ga('send', 'event', 'text', 'error', errcode, errcode);
                 ga('send', 'event', '문자열', 'click', '테스트', 'errcode');
                 if(input.val() == false){
                     alert("내용을 입력해 주세요.");
