@@ -60,12 +60,6 @@
             });
 
             clip.on('click', function(){
-                ga('send', 'event', '클라이언트', 'click', '다운로드시작', currentDate);
-                ga('send', 'timing', {
-                      'timingCategory': 'category',
-                      'timingVar': 'lookup',
-                      'timingValue': 123
-                    });
                 ga('send', 'event', '클라이언트', 'click', '다운로드끝', errcode);
                 ga('send', 'event', '클라이언트', 'error', errcode, errcode);
                 ga('send', 'event', '문자열', 'click', '테스트', 'errcode');
