@@ -44,6 +44,7 @@
             var output = $('.result');
             var btn = $('.btn');
             var clip = $('.btn-clip');
+            var currentDate = new Date();
 
             $('.count').text(commentCount);
 
@@ -58,7 +59,6 @@
             });
 
             clip.on('click', function(){
-                var currentDate = new Date();
                 ga('send', 'event', '클라이언트', 'click', '다운로드시작', currentDate);
                 ga('send', 'timing', {
                       'timingCategory': 'category',
