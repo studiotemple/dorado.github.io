@@ -43,11 +43,45 @@
             var input = $('.input');
             var output = $('.result');
             var btn = $('.btn');
+            var btn1 = $('.btn');
+            var btn2 = $('.btn2');
+            var btn3 = $('.btn3');
+            var btn4 = $('.btn4');
+            var btn5 = $('.btn5');
             var clip = $('.btn-clip');
             var currentDate = new Date();
-            var errcode = '19205';
+            var errcode = 19200;
+            var errcode1 = 8888;
+            var errcode2 = 7777;
+            var filename = "../apps/air/launcher/client.exe";
 
             $('.count').text(commentCount);
+            
+            btn1.on('click', function(){
+                ga('send', 'event', 'Downloads', 'click', 'Download-start');
+                console.log('ga sanding btn1');
+            });
+            
+            btn2.on('click', function(){
+                ga('send', 'event', 'Downloads', 'click', 'Download-complete');
+                console.log('ga sanding btn2');
+            });
+            
+            btn3.on('click', function(){
+                ga('send', 'event', 'stopCase', 'errcode', errcode);
+                ga('send', 'event', 'stopCase', 'cdnFileError', filename);
+                console.log('ga sanding btn3');
+            });
+            
+            btn4.on('click', function(){
+                ga('send', 'event', 'stopCase', 'userCancel', errcode1);
+                console.log('ga sanding btn4');
+            });
+            
+            btn5.on('click', function(){
+                ga('send', 'event', 'stopCase', 'userCancel', errcode2);
+                console.log('ga sanding btn5');
+            });
 
             function copyToClipboard(text) {
                 window.prompt("Ctrl+C를 누른후 확인(또는 Enter)을 누르면 클립보드에 복사됩니다.", text);
@@ -60,9 +94,6 @@
             });
 
             clip.on('click', function(){
-                ga('send', 'event', '클라이언트', 'click', '다운로드끝', errcode);
-                ga('send', 'event', 'text', 'error', errcode, errcode);
-                ga('send', 'event', '문자열', 'click', '테스트', 'errcode');
                 if(input.val() == false){
                     alert("내용을 입력해 주세요.");
                 } else if(output.text() == "이곳에 번역된 내용이 표시됩니다."){
@@ -113,6 +144,11 @@
                 <div class="btn-area">
                     <button class="btn">다시 쓰기</button>
                     <button class="btn-clip">번역된 내용 클립보드로 복사</button>
+                    <button class="btn1">다운로드시작</button>
+                    <button class="btn2">다운로드성공이벤트</button>
+                    <button class="btn3">오류발생</button>
+                    <button class="btn4">사용자중지</button>
+                    <button class="btn5">창닫기</button>
                 </div>
                 <p class="list">현재 총 <span class='count'></span>개의 대사를 지원합니다.
 
