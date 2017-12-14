@@ -116,7 +116,7 @@
                 } else if (errCode2 > 15000 && errCode2 < 20000 ){
                   filename ="DOWNLOADEDRESOURCES.DAT";
                 }
-                ga('send', 'event', 'StopCase', errCode2, 'window_close');
+                ga('send', 'event', 'StopCase', errCode2, filename);
                 console.log(errCode2);
                 console.log(filename);
             });
