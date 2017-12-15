@@ -78,61 +78,40 @@
             errCode2 = mixing(2);
 
             btn.on('click', function(){
-                ga('send', 'event', 'DownLoads', 'Download-start');
-                gtag('send', 'event', 'DownLoads', 'Download-start');
+               
                 console.log(sessionId);
             });
 
             btn1.on('click', function(){
-              ga('send', 'event', 'DownLoads', 'Download-complete');
-              gtag('send', 'event', 'DownLoads', 'Download-complete');
+
               console.log(sessionId);
             });
 
             btn2.on('click', function(){
-                if(sec > 0 && sec < 3600000){
-                    ga('send', 'event', 'DownLoads', 'Download-time', '1시간미만', sec);
-                    gtag('send', 'event', 'DownLoads', 'Download-time', '1시간미만', sec);
-                } else if(sec > 3600000 && sec < 7200000){
-                    ga('send', 'event', 'DownLoads', 'Download-time', '1시간초과 2시간미만', sec);
-                    gtag('send', 'event', 'DownLoads', 'Download-time', '1시간초과 2시간미만', sec);
-                } else if(sec > 7200000 && sec < 10800000){
-                    ga('send', 'event', 'DownLoads', 'Download-time', '2시간초과 3시간미만', sec);
-                    gtag('send', 'event', 'DownLoads', 'Download-time', '2시간초과 3시간미만', sec);
-                } else if(sec > 10800000 && sec < 14400000){
-                    ga('send', 'event', 'DownLoads', 'Download-time', '3시간초과 4시간미만', sec);
-                    gtag('send', 'event', 'DownLoads', 'Download-time', '3시간초과 4시간미만', sec);
-                } else if(sec < 14400000){
-                    ga('send', 'event', 'DownLoads', 'Download-time', '4시간초과', sec);
-                    gtag('send', 'event', 'DownLoads', 'Download-time', '4시간초과', sec);
-                }
+               
                 console.log(sessionId);
                 console.log('time : ' + sec);
             });
 
             btn3.on('click', function(){
-                ga('send', 'event', 'StopCase', errCode, 'hostError');
-                gtag('send', 'event', 'StopCase', errCode, 'hostError');
+                
                 console.log(sessionId);
                 console.log('err : ' + errCode);
             });
 
             btn4.on('click', function(){
-                ga('send', 'event', 'StopCase', errCode1, 'buildError');
-                gtag('send', 'event', 'StopCase', errCode1, 'buildError');
+                
                 console.log(sessionId);
                 console.log('err : ' + errCode1);
             });
 
             btn5.on('click', function(){
-                ga('send', 'event', 'StopCase', 'u1001', 'user_stoped');
-                gtag('send', 'event', 'StopCase', 'u1001', 'user_stoped');
+                
                 console.log(sessionId);
             });
 
             btn6.on('click', function(){
-                ga('send', 'event', 'StopCase', 'c2003', 'window_close');
-                gtag('send', 'event', 'StopCase', 'c2003', 'window_close');
+               
                 console.log(sessionId);
             });
 
