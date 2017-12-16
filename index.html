@@ -59,26 +59,11 @@
             var btn7 = $('.btn7');
             var sessionId = 0;
             var sec = 0;
-            var errCode = '';
-            var errCode1 = '';
-            var errCode2 = '';
 
-            function makeRandom(min, max) {
-                var RandVal = Math.random() * (max-min) + min;
-                return Math.floor(RandVal);
-            }
-
-            function mixing(original) {
-                var random = makeRandom(1, 1000);
-                return original*random;
-              }
 
             sessionId = mixing(121);
             sec = mixing(36000000);
-            errCode = mixing(5);
-            errCode1 = mixing(3);
-            errCode2 = mixing(2);
-
+  
             btn.on('click', function(){
                
                 console.log(sessionId);
@@ -98,13 +83,13 @@
             btn3.on('click', function(){
                 
                 console.log(sessionId);
-                console.log('err : ' + errCode);
+
             });
 
             btn4.on('click', function(){
                 
                 console.log(sessionId);
-                console.log('err : ' + errCode1);
+
             });
 
             btn5.on('click', function(){
