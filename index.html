@@ -118,20 +118,6 @@
             });
 
             btn7.on('click', function(){
-                var filename = "";
-                if (errCode2 > 0 && errCode2 < 500){
-                  filename ="OSChecker.dll";
-                } else if (errCode2 > 5000 && errCode2 < 1000 ){
-                  filename ="Launcher.exe";
-                } else if (errCode2 > 10000 && errCode2 < 1500 ){
-                  filename ="local.db";
-                } else if (errCode2 > 15000 && errCode2 < 2000 ){
-                  filename ="DOWNLOADEDRESOURCES.DAT";
-                }
-                ga('send', 'event', 'StopCase', errCode2, filename);
-                gtag('send', 'event', 'StopCase', errCode2, filename);
-                console.log(errCode2);
-                console.log(filename);
             });
         });
     </script>
