@@ -80,6 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
             btn7.on('click', function(){
               $('.btn-test').show();
+              dataLayer.push({'에러코드': '잘되나'});
               console.log('click');
             });
             $('.btn-test').on('click', function(){
