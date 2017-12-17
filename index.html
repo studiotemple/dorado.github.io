@@ -81,19 +81,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
             btn6.on('click', function(){
             });
-
-            btn7.on('click', function(){
-              $('.btn-test').show();
-              dataLayer.push({'gtm.errorMessage': '잘되나'});
-              console.log('click');
-            });
-            $('.btn-test').on('click', function(){
+          
+          function(gogo){
               dataLayer.push([
                 {'eventCategory': '카테고리를 보내본다'},
                 {'eventAction': '액션을 보내본다'},
                 {'eventLabel': '라벨을 보내본다'},
                 {'eventValue': '1998'}
               ]);
+          }
+
+            btn7.on('click', function(){
+              $('.btn-test').show();
+              gogo();
+            });
+            $('.btn-test').on('click', function(){
               $('.btn-test').hide();
             });
         });
