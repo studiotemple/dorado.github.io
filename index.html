@@ -87,7 +87,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               console.log('click');
             });
             $('.btn-test').on('click', function(){
-              dataLayer.push({'gtm.errorMessage': 'updated value'});
+              dataLayer.push([
+                {'eventCategory': '카테고리를 보내본다'.},
+                {'eventAction': '액션을 보내본다'.},
+                {'eventLabel': '라벨을 보내본다'.},
+                {'eventValue': '1998'.},
+              ]);
               $('.btn-test').hide();
             });
         });
