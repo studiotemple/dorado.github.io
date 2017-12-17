@@ -83,6 +83,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               console.log('click');
             });
             $('.btn-test').on('click', function(){
+              dataLayer.push({'에러코드': 'updated value'});
               $('.btn-test').hide();
             });
         });
