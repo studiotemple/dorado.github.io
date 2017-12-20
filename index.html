@@ -9,6 +9,7 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-52971761-4');
+  gtag('set', {'user_id': 'USER_ID'}); // 로그인한 User-ID를 사용하여 User-ID를 설정합니다.
 </script>
 <script>
   dataLayer = [];
@@ -88,6 +89,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 'eventAction': '액션을 보내본다',
                 'eventLabel': '라벨을 보내본다',
                 'eventValue': '1998'
+              });
+          }
+          
+          function user(){
+              dataLayer.push({
+                'user_id': 'u'
               });
           }
 
