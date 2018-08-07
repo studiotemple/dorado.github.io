@@ -1,25 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52971761-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-52971761-4');
-</script>
-<script>
-  dataLayer = [];
-</script>  
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T8PN8G6');</script>
-<!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -31,306 +12,114 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- ios홈화면추가시 상단 주소창 제거 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="">
-    <title>GA를 배워보자</title>
+
+
+    <title>하나무라로 떠납니다.</title>
+
     <link rel="apple-touch-icon" sizes="192x192" href="">
     <link rel="apple-touch-icon-precomposed" sizes="192x192" href="">
     <link rel="shortcut icon" href="">
     <link href="./css/common.css?t=201607070855" rel="stylesheet">
     <link href="./css/layout.css?t=201607081155" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-<!--     <script type="text/javascript" src="./js/jquery/jquery-3.0.0.min.js"></script> -->
-    <!-- <script type="text/javascript" src="./js/overwatch_comment.js"></script> -->
 
+    <script type="text/javascript" src="./js/jquery/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="./js/overwatch_comment.js"></script>
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52971761-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 
     <script type="text/javascript">
         $(document).ready(function(){
-            
+            var input = $('.input');
+            var output = $('.result');
             var btn = $('.btn');
-            var btn1 = $('.btn1');
-            var btn2 = $('.btn2');
-            var btn3 = $('.btn3');
-            var btn4 = $('.btn4');
-            var btn5 = $('.btn5');
-            var btn6 = $('.btn6');
-            var btn7 = $('.btn7');
-            var numnum = '';
-          
+            var clip = $('.btn-clip');
+
+            $('.count').text(commentCount);
+
+            function copyToClipboard(text) {
+                window.prompt("Ctrl+C를 누른후 확인(또는 Enter)을 누르면 클립보드에 복사됩니다.", text);
+            }
+
             btn.on('click', function(){
-
-               numnum = 15;
-               console.log(numnum);
+                output.css('color', '#ffffff');
+                input.val("");
+                output.text("이곳에 번역된 내용이 표시됩니다.");
             });
 
-            btn1.on('click', function(){
-              
+            clip.on('click', function(){
+                if(input.val() == false){
+                    alert("내용을 입력해 주세요.");
+                } else if(output.text() == "이곳에 번역된 내용이 표시됩니다."){
+                    alert("번역할 내용이 마땅치 않네요... 다른 내용을 입력해 보세요.");
+                } else if(output.text() == "번역할 내용이 마땅치 않네요... 다른 내용을 입력해 보세요."){
+                    alert("번역할 내용이 마땅치 않네요... 다른 내용을 입력해 보세요.");
+                } else {
+                    copyToClipboard(output.text());
+                }
             });
 
-            btn2.on('click', function(){
-               
+            input.keyup(function () {
+                if (input.val().trim().length == 0) {
+                    output.text("이곳에 번역된 내용이 표시됩니다.");
+                    output.css('color', '#ffffff');
+                } else {
+                    var result = mixing(input.val());
+                    if(!result){
+                        output.text("번역할 내용이 마땅치 않네요... 다른 내용을 입력해 보세요.");
+                    } else {
+                        output.text(result);
+                    }
+                    output.css('color', '#f8cc18');
+                }
             });
 
-            btn3.on('click', function(){
-              
-            });
-
-            btn4.on('click', function(){
-                
-            });
-
-            btn5.on('click', function(){
-                
-            });
-
-            btn6.on('click', function(){
-            });
-          
-          function gogo(){
-              dataLayer.push({
-                'eventCategory': '카테고리를 보내본다',
-                'eventAction': '액션을 보내본다',
-                'eventLabel': '라벨을 보내본다',
-                'eventValue': '1998'
-              });
-          }
-
-            btn7.on('click', function(){
-              $('.btn-test').show();
-              gogo();
-            });
-            $('.btn-test').on('click', function(){
-              $('.btn-test').hide();
-            });
         });
+
     </script>
-    <style>
-    button {
-      width: 300px;
-      height: 50px;
-      margin: 10px;
-      }
-    .btn-test {
-     display:none;
-      }
-    .scrollTest {
-      height: 100%;
-      overflow-y: auto;
-      }
-    </style>
-</head>
+
+
 <body id="wrapper">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8PN8G6"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
     <div class="wrap">
         <div class="container">
-            <div class="area-result">
-                <div class="btn-area">
-                    <div class="test_btn">
-                      
-                        <button class="btn">다운로드 시작</button>
-                        <button class="btn1">다운로드 성공</button>
-                        <button class="btn2">다운로드 소요시간</button>
-                        <button class="btn3">오류발생</button>
-                        <button class="btn4">오류발생1</button>
-                        <button class="btn5">사용자중지</button>
-                        <button class="btn6">창닫기</button>
-                        <button class="btn7">오류발생파일</button>
-                      <button id="plz" class="btn-test">테스트야</button>
-                    </div>
+            <div class="guide-container">
+                <h1 class="title">시계드립<br />생성기</h1>
+                <div class="guide">
+                    <p>쓰고 싶은 내용을 자유롭게 입력하세요. 맞출필요 없어요.</p>
+                    <p>입력한 내용 중 오버워치와 연결할만한 것이 있다면 번역해 드립니다.</p>
+                    <p class="sub">이 사이트는 무료호스팅이라 언제 뻗을지 모름.</p>
                 </div>
-                <div class="scrollTest">
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  <p>과 악의 전쟁, 거대한 운명이 결정된다!
-악의 세력인 무자비한 ‘퍼스트 오더’가 은하계를 장악한 시대. 
- 레아 장군이 이끄는 저항군은 승리의 불씨를 지필 마지막 희망을 찾아 ‘레이’를 과거의 영웅 ‘루크’에게 보낸다. 
- 루크를 통해 자신 안에 잠들어 있던 특별한 힘을 깨닫게 된 레이는 뜻밖에 퍼스트 오더의 실세 ‘카일로 렌’과도 교감하게 되는데… 
-  
- 누가 빛이고 누가 어둠이 될 것인가? 
- 지금, 선과 악의 운명을 건 거대한 전쟁이 시작된다!</p>
-                  
-                </div>
-
             </div>
+            <div class="area-transper">
+                <textarea class="input" placeholder="번역할 내용을 입력해주세요."></textarea>
+            </div>
+            <div class="area-result">
+                <p class="result">이곳에 번역된 내용이 표시됩니다.</p>
+                <div class="btn-area">
+                    <button class="btn">다시 쓰기</button>
+                    <button class="btn-clip">번역된 내용 클립보드로 복사</button>
+                </div>
+                <p class="list">현재 총 <span class='count'></span>개의 대사를 지원합니다.
 
+                <p class="email">대사 제보는 이곳으로 : </p>
+                <a class="email-link" href="mailto:studiotemple81@gmail.com" target="_blank">studiotemple81@gmail.com</a>
+            </div>
+            <div class="main-visual">
+                <div class="dim"></div>
+            </div>
         </div>
     </div>
+    <script type="text/javascript" src="./js/iscroll.js"></script>
 </body>
 
 </html>
