@@ -51,7 +51,7 @@
             var output = $('.result');
             var btn = $('.btn');
             var clip = $('.btn-clip');
-
+            output.removeClass("return_result");
             $('.count').text(commentCount);
 
             function copyToClipboard(text) {
@@ -75,6 +75,7 @@
                 } else {
                     copyToClipboard(output.text());
                 }
+                output.removeClass("return_result");
             });
 
             input.keyup(function () {
